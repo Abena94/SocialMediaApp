@@ -1,5 +1,5 @@
 import axios from "axios";
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'https://socialmediaapp-yzhj.onrender.com' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('tokens')) {
@@ -10,7 +10,7 @@ API.interceptors.request.use((req) => {
 });
 
 export const createPost = (dataURL) => {
-    API.post("http://localhost:5000/posts/createpost", dataURL)
+    API.post("https://socialmediaapp-yzhj.onrender.com/posts/createpost", dataURL)
     .then((response) => {
       console.log(response.status, response.data);
     });
@@ -18,17 +18,17 @@ export const createPost = (dataURL) => {
 
 export const updatePost = (dataURL, id) => {
 
-    API.patch(`http://localhost:5000/posts/updatepost/${id}`, dataURL);
+    API.patch(`https://socialmediaapp-yzhj.onrender.com/posts/updatepost/${id}`, dataURL);
 };
 
 export const likePost = (id) => {
-  API.patch(`http://localhost:5000/posts/${id}/likepost`).then((response) => {
+  API.patch(`https://socialmediaapp-yzhj.onrender.com/posts/${id}/likepost`).then((response) => {
     console.log(response.status, response.data);
   });
 };
 
 export const deletePost = (id) => {
-  API.delete(`http://localhost:5000/posts/${id}`).then((response) => {
+  API.delete(`https://socialmediaapp-yzhj.onrender.com/posts/${id}`).then((response) => {
     console.log(response.status, response.data);
   });
 };
