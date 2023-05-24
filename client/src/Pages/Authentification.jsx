@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAuth } from "../auth";
-import { signin,signup } from "../api";
+import { signin, signup } from "../api";
 
 const theme = createTheme();
 
@@ -25,39 +25,33 @@ export default function SignUp() {
   };
   const [form, setForm] = useState(initialState);
   const [isSignUp, setIsSignup] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(false);
+
   const { setAuthTokens } = useAuth();
- const history = useNavigate();
+  const history = useNavigate();
 
- const signIn =async (data) => {
-  const response=await signin(data);
-  if (response.status===200){
-    setAuthTokens(response.data);
-    setLoggedIn(true);
-    
-    history("/");
-    window.location.reload(true);
-    
-  }
-  else{
-    console.log(response.message);
-  }
-};
+  const signIn = async (data) => {
+    const response = await signin(data);
+    if (response.status === 200) {
+      setAuthTokens(response.data);
 
-const signUp = async (data) => {
-  const response=await signup(data);
-  if (response.status===201){
-    setAuthTokens(response.data);
-    setLoggedIn(true);
-    
-    history("/");
-    window.location.reload(true);
-  }
-  else{
-    console.log(response.message);
-  }
-};
+      history("/");
+      window.location.reload(true);
+    } else {
+      console.log(response.message);
+    }
+  };
 
+  const signUp = async (data) => {
+    const response = await signup(data);
+    if (response.status === 201) {
+      setAuthTokens(response.data);
+
+      history("/");
+      window.location.reload(true);
+    } else {
+      console.log(response.message);
+    }
+  };
 
   const switchMode = () => {
     setForm(initialState);
@@ -74,7 +68,6 @@ const signUp = async (data) => {
       signIn(form);
     }
   };
-
 
   return (
     <ThemeProvider theme={theme}>
@@ -167,7 +160,6 @@ const signUp = async (data) => {
                   />
                 </Grid>
               )}
-           
             </Grid>
             <Button
               type="submit"

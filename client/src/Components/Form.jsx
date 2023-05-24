@@ -19,9 +19,8 @@ export default function Form({ postData, setPostData,currentId,setCurrentId,post
   };
 
   useEffect(() => {
-    if (!post?.title) clear();
     if (post) setPostData(post);
-  },[post]);
+  },[post,setPostData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
