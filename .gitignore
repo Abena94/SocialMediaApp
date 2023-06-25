@@ -2,5 +2,5 @@
 
 # dependencies
 /node_modules
-SocialMediaApp/client/node_modules
-SocialMediaApp/server/node_modules
+/client/node_modules
+/server/node_modules
