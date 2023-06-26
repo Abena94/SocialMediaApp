@@ -13,7 +13,7 @@ Hello and welcome to `MySocialMediaApp`! As a recent Computer Science graduate e
 
 To run this project locally, you'll need Node.js (version 10.0 or above) and MongoDB installed on your machine. 
 
-###Tech Stack
+### Tech Stack
 
 MongoDB Atlas: Used MongoDB Atlas, a fully-managed cloud database, for data persistence.\
 Express.js: Utilized Express.js to create a robust API server.\
