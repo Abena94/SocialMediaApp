@@ -15,7 +15,7 @@ export default function Home() {
   });
   const [currentId, setCurrentId] = useState(0);
   const getAllPosts = async () => {
-    const response = await axios.get("https://socialmediaapp-yzhj.onrender.com/posts/getall");
+    const response = await axios.get("http://localhost:5000/posts/getall");
     const data = response.data;
     setPost(data);
     
