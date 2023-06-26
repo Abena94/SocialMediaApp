@@ -26,7 +26,7 @@ Here are the steps you can follow to set up the project on your local machine:
 
 1. **Clone the Repository**:
 
-   Use `git clone https://github.com/[yourusername]/SocialHub.git` to clone the repository.
+   Use `[git clone https://github.com/Abena94/SocialMediaApp.git` to clone the repository.
 
 2. **Install Dependencies**:
    
